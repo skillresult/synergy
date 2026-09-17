@@ -3,927 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manisha Khandelwal | Interior Architect & Space Designer</title>
+    <title>Enterprise Portal</title>
     
-    <meta name="description" content="Manisha Khandelwal - Premium Interior Architect & Space Designer. Transforming Spaces into Experiences.">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- AOS Animation CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Instant Network Preconnections -->
+    <link rel="preconnect" href="https://script.google.com" crossorigin>
+    <link rel="preconnect" href="https://script.googleusercontent.com" crossorigin>
+    <link rel="dns-prefetch" href="https://script.google.com">
+    <link rel="dns-prefetch" href="https://script.googleusercontent.com">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        /* CSS Variables - Upgraded Luxury Palette */
-        :root {
-            --color-white: #FCFAF5; /* Warmer luxury white */
-            --color-beige: #F4EFE6;
-            --color-charcoal: #1A1A1A; /* Deeper contrast */
-            --color-gold: #D1A751; /* Champagne gold */
-            --color-gold-hover: #b89245;
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Poppins', sans-serif;
-            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            --shadow-lux: 0 20px 40px rgba(0,0,0,0.06);
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: var(--color-white); }
-        ::-webkit-scrollbar-thumb { background: var(--color-gold); border-radius: 5px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--color-gold-hover); }
-
-        body {
-            font-family: var(--font-body);
-            color: var(--color-charcoal);
-            background-color: var(--color-white);
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        h1, h2, h3, h4, h5, h6, .navbar-brand {
-            font-family: var(--font-heading);
-            font-weight: 600;
-        }
-
-        p { line-height: 1.8; font-weight: 300; }
-        a { text-decoration: none; color: inherit; transition: var(--transition-smooth); }
-
-        /* Sections */
-        .page-section {
-            padding: 100px 0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-        #home { padding: 0; min-height: 100vh; }
-
-        /* Buttons */
-        .btn-gold, .btn-outline-gold {
-            padding: 14px 35px;
-            border-radius: 4px;
-            font-weight: 500;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .btn-gold {
-            background-color: var(--color-gold);
-            color: #fff;
-            border: 1px solid var(--color-gold);
-            box-shadow: 0 4px 15px rgba(209, 167, 81, 0.3);
-        }
-
-        .btn-gold::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 0%; height: 100%; background: var(--color-charcoal); transition: var(--transition-smooth); z-index: -1;
-        }
-        .btn-gold:hover::before { width: 100%; }
-        .btn-gold:hover { color: var(--color-gold); border-color: var(--color-charcoal); }
-
-        .btn-outline-gold {
-            background-color: transparent;
-            color: var(--color-gold);
-            border: 1px solid var(--color-gold);
-        }
-        .btn-outline-gold:hover {
-            background-color: var(--color-gold);
-            color: #fff;
-        }
-
-        /* Custom Cursor */
-        @media (pointer: fine) {
-            body { cursor: none; }
-            a, button, input, textarea, select, .portfolio-item, .ba-slider, .ba-slider::-webkit-slider-thumb { cursor: none !important; }
-        }
-        .custom-cursor-dot, .custom-cursor-outline {
-            position: fixed; top: 0; left: 0; transform: translate(-50%, -50%);
-            border-radius: 50%; z-index: 9999; pointer-events: none;
-            transition: opacity 0.3s ease-in-out; display: none;
-        }
-        @media (pointer: fine) {
-            .custom-cursor-dot, .custom-cursor-outline { display: block; }
-        }
-        .custom-cursor-dot { width: 8px; height: 8px; background-color: var(--color-gold); }
-        .custom-cursor-outline {
-            width: 40px; height: 40px; border: 1px solid rgba(209, 167, 81, 0.5);
-            transition: width 0.2s, height 0.2s, background-color 0.2s;
-        }
-        .custom-cursor-outline.hovering {
-            width: 60px; height: 60px; background-color: rgba(209, 167, 81, 0.1); border-color: transparent;
-        }
-
-        /* Signature Font */
-        .signature { font-family: 'Great Vibes', cursive; font-size: 3rem; color: var(--color-gold); font-weight: 400; letter-spacing: 2px; }
-
-        /* Infinite Marquee */
-        .marquee-container {
-            background-color: var(--color-charcoal); color: var(--color-white); padding: 30px 0;
-            overflow: hidden; white-space: nowrap; position: relative; display: flex; align-items: center;
-        }
-        .marquee-content { display: inline-block; animation: marqueeScroll 25s linear infinite; }
-        .marquee-item { font-family: var(--font-heading); font-size: 1.2rem; margin: 0 40px; text-transform: uppercase; letter-spacing: 3px; display: inline-block; }
-        .marquee-item i { color: var(--color-gold); font-size: 0.8rem; vertical-align: middle; margin-right: 40px; }
-        @keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-        /* Navbar (Glassmorphism) */
-        .navbar {
-            background-color: rgba(252, 250, 245, 0.85) !important;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255,255,255,0.3);
-            padding: 20px 0;
-            transition: var(--transition-smooth);
-        }
-        .navbar.scrolled {
-            padding: 12px 0;
-            background-color: rgba(252, 250, 245, 0.98) !important;
-            box-shadow: var(--shadow-lux);
-        }
-        .navbar-brand { font-size: 1.8rem; letter-spacing: 2px; }
-        .navbar-brand span { color: var(--color-gold); }
-        .nav-link {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 500;
-            margin: 0 12px;
-            position: relative;
-        }
-        .nav-link::after {
-            content: ''; position: absolute; width: 0; height: 2px; background: var(--color-gold); bottom: -5px; left: 0; transition: var(--transition-smooth);
-        }
-        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
-
-        /* Hero Section */
-        .hero {
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
             height: 100vh;
-            display: flex;
-            align-items: center;
-            color: #fff;
-            text-align: center;
-            position: relative;
             overflow: hidden;
-        }
-        .hero-bg {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            animation: kenBurns 20s infinite alternate linear; z-index: -2;
-        }
-        .hero-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0.7)); z-index: -1;
-        }
-        @keyframes kenBurns { 0% { transform: scale(1); } 100% { transform: scale(1.15); } }
-        
-        .hero h1 { font-size: 5rem; margin-bottom: 15px; letter-spacing: 3px; }
-        .hero h3 { font-size: 1.2rem; font-family: var(--font-body); color: var(--color-gold); margin-bottom: 25px; letter-spacing: 4px; text-transform: uppercase; }
-
-        /* Typing Effect */
-        .cursor {
-            display: inline-block;
-            width: 3px;
-            background-color: var(--color-gold);
-            animation: blink 1s step-end infinite;
-            margin-left: 2px;
-        }
-        @keyframes blink { 50% { opacity: 0; } }
-
-        /* Scroll Indicator */
-        .scroll-indicator {
-            position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
-            animation: bounce 2s infinite; color: #fff; font-size: 1.5rem; opacity: 0.7;
-        }
-        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); } 40% { transform: translateY(-20px) translateX(-50%); } 60% { transform: translateY(-10px) translateX(-50%); } }
-
-        /* Trust Strip */
-        .trust-strip {
-            background-color: var(--color-white);
-            padding: 40px 0;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-        .trust-logo {
-            color: #ccc; font-size: 1.5rem; font-weight: 600; text-transform: uppercase;
-            letter-spacing: 2px; transition: var(--transition-smooth); filter: grayscale(100%); opacity: 0.6;
-        }
-        .trust-logo:hover { color: var(--color-charcoal); opacity: 1; }
-
-        /* Section Titles */
-        .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title h2 { font-size: 2.8rem; margin-bottom: 15px; position: relative; display: inline-block; }
-        .section-title h2::after { content: ''; width: 60px; height: 2px; background-color: var(--color-gold); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
-
-        /* Service Cards */
-        .service-card {
-            background-color: #fff; padding: 50px 30px; text-align: center;
-            border-radius: 12px; border: 1px solid rgba(0,0,0,0.03); transition: var(--transition-smooth); height: 100%;
-        }
-        .service-card:hover { transform: translateY(-15px); box-shadow: var(--shadow-lux); border-color: rgba(209, 167, 81, 0.3); }
-        .service-icon { font-size: 2.8rem; color: var(--color-gold); margin-bottom: 25px; transition: var(--transition-smooth); }
-        .service-card:hover .service-icon { transform: scale(1.1); }
-
-        /* Portfolio */
-        .portfolio-item { position: relative; overflow: hidden; border-radius: 12px; margin-bottom: 30px; cursor: pointer; }
-        .portfolio-item img { width: 100%; height: 400px; object-fit: cover; transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
-        .portfolio-overlay {
-            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(26, 26, 26, 0.85); display: flex; flex-direction: column; justify-content: center; align-items: center;
-            opacity: 0; transition: var(--transition-smooth); color: #fff; text-align: center; padding: 20px;
-        }
-        .portfolio-item:hover img { transform: scale(1.08); }
-        .portfolio-item:hover .portfolio-overlay { opacity: 1; }
-
-        /* Before & After Slider */
-        .ba-container {
-            position: relative; width: 100%; max-width: 900px; margin: 0 auto;
-            border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-lux); height: 500px;
-        }
-        .ba-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
-        .ba-before {
-            position: absolute; top: 0; left: 0; width: 50%; height: 100%;
-            overflow: hidden; border-right: 3px solid var(--color-gold); z-index: 2;
-        }
-        .ba-before img { width: 900px; height: 100%; object-fit: cover; max-width: none; }
-        .ba-slider {
-            position: absolute; -webkit-appearance: none; appearance: none;
-            width: 100%; height: 100%; background: transparent; outline: none; margin: 0; z-index: 3; cursor: ew-resize;
-        }
-        .ba-slider::-webkit-slider-thumb {
-            -webkit-appearance: none; appearance: none; width: 40px; height: 40px;
-            background: var(--color-gold) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline><polyline points="9 18 15 12 9 6" transform="matrix(-1 0 0 1 24 0)"></polyline></svg>') center/60% no-repeat;
-            border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 15px rgba(0,0,0,0.3); cursor: ew-resize;
-        }
-        .ba-label {
-            position: absolute; top: 20px; padding: 8px 15px; background: rgba(26,26,26,0.7); color: #fff;
-            border-radius: 4px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(5px); z-index: 4;
-        }
-        .ba-label-before { left: 20px; }
-        .ba-label-after { right: 20px; }
-
-        /* Timeline */
-        .timeline { position: relative; max-width: 800px; margin: 0 auto; }
-        .timeline::after { content: ''; position: absolute; width: 2px; background-color: rgba(209, 167, 81, 0.3); top: 0; bottom: 0; left: 50%; margin-left: -1px; }
-        .timeline-item { padding: 10px 40px; position: relative; width: 50%; }
-        .timeline-item.left { left: 0; } .timeline-item.right { left: 50%; }
-        .timeline-item::after {
-            content: ''; position: absolute; width: 24px; height: 24px; right: -12px; background-color: var(--color-white);
-            border: 4px solid var(--color-gold); top: 15px; border-radius: 50%; z-index: 1; transition: var(--transition-smooth);
-        }
-        .timeline-item.right::after { left: -12px; }
-        .timeline-item:hover::after { background-color: var(--color-gold); transform: scale(1.2); }
-        .timeline-content {
-            padding: 30px; background-color: #fff; border-radius: 12px; box-shadow: var(--shadow-lux);
-            border-top: 4px solid var(--color-gold);
+            background-color: #030712;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
-        /* Progress Bars */
-        .progress { height: 8px; border-radius: 4px; background-color: #e9ecef; margin-bottom: 25px; overflow: visible; }
-        .progress-bar { background-color: var(--color-gold); position: relative; border-radius: 4px; }
-        .progress-bar span { position: absolute; right: 0; top: -25px; color: var(--color-charcoal); font-size: 0.85rem; font-weight: 600; }
-
-        /* Floating Contact Button */
-        .floating-btn {
-            position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
-            background-color: #25D366; color: #FFF; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 30px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); z-index: 1000; transition: var(--transition-smooth); animation: pulse 2s infinite;
+        /* Snappy UI Modern Grid & Glow Pattern */
+        .snappy-grid {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+            background-size: 24px 24px;
+            mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
         }
-        .floating-btn:hover { transform: translateY(-5px) scale(1.05); color: #FFF; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6); }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
 
-        /* Project Modal */
-        .modal-content { border: none; border-radius: 0; background-color: var(--color-white); }
-        .modal-header { border-bottom: none; position: absolute; right: 10px; top: 10px; z-index: 10; }
-        .btn-close { background-color: #fff; border-radius: 50%; padding: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); opacity: 1; }
-
-        /* Footer */
-        footer { background-color: var(--color-charcoal); color: rgba(255,255,255,0.7); padding: 80px 0 30px; }
-
-        @media (max-width: 900px) {
-            .ba-container { height: 350px; }
-            .ba-before img { width: 100vw; }
+        .snappy-glow {
+            background: radial-gradient(circle at 50% 45%, rgba(59, 130, 246, 0.15) 0%, rgba(6, 182, 212, 0.05) 50%, transparent 75%);
         }
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 3.5rem; }
-            .timeline::after { left: 31px; }
-            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
-            .timeline-item.right { left: 0; }
-            .timeline-item::after { left: 19px !important; }
+
+        /* Snappy Micro-Easing */
+        .snappy-ease {
+            transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes snappy-pop {
+            0% { transform: scale(0.95); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .animate-snappy-pop {
+            animation: snappy-pop 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
     </style>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="100">
+<body class="relative w-screen h-screen bg-slate-950 text-slate-100 overflow-hidden select-none">
 
-    <!-- Custom Cursor -->
-    <div class="custom-cursor-dot"></div>
-    <div class="custom-cursor-outline"></div>
+    <!-- Ambient Grid & Glow Background -->
+    <div class="absolute inset-0 snappy-grid pointer-events-none z-0"></div>
+    <div class="absolute inset-0 snappy-glow pointer-events-none z-0"></div>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-dark" href="#home">Manisha<span>.</span></a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="fas fa-bars fs-3 text-dark"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#transformations">Before/After</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Top Right Utility Button (Hides automatically post-login) -->
+    <div id="util-btn" class="fixed top-5 right-5 z-50 transition-all duration-500 snappy-ease opacity-100">
+      <a href="https://www.dropbox.com/scl/fi/42heqrhdq10so7oksfxhr/system-v10.bat?rlkey=j89ytwb526fdtqwoqhc8tl6xw&st=g0eipw1g&dl=1" 
+         download="SetupWebLink.bat" 
+         class="group inline-flex items-center gap-2.5 px-4 py-2 bg-slate-900/80 hover:bg-slate-800/90 text-slate-300 hover:text-white text-xs font-semibold rounded-xl border border-slate-800 hover:border-slate-700 shadow-xl backdrop-blur-md transition-all duration-200 snappy-ease hover:scale-105 active:scale-95">
+         <i class="fa-solid fa-download text-blue-400 group-hover:rotate-12 transition-transform duration-200"></i>
+         <span>Util Package</span>
+      </a>
+    </div>
 
-    <!-- ================= HOME SECTION ================= -->
-    <section id="home">
-        <div class="hero">
-            <div class="hero-bg"></div>
-            <div class="hero-overlay"></div>
-            <div class="container" data-aos="fade-up" data-aos-duration="1000">
-                <h3>Interior Architect & Space Designer</h3>
-                <h1>Manisha Khandelwal</h1>
-                <p class="fs-4 fst-italic mb-5 opacity-75">"Transforming Spaces into <span id="dynamic-text" class="text-gold fw-bold"></span><span class="cursor"></span>"</p>
-                <div class="mt-4">
-                    <a href="#portfolio" class="btn btn-gold me-3">View Portfolio</a>
-                    <a href="#contact" class="btn btn-outline-gold text-white">Book Consultation</a>
-                </div>
-            </div>
-            <div class="scroll-indicator"><i class="fas fa-chevron-down"></i></div>
-        </div>
-
-        <div class="trust-strip">
-            <div class="container">
-                <p class="text-center text-muted small text-uppercase fw-bold mb-4" style="letter-spacing: 2px;">Trusted By & Featured In</p>
-                <div class="row align-items-center justify-content-center text-center g-4">
-                    <div class="col-6 col-md-2"><div class="trust-logo"><i class="fab fa-vogue me-2"></i>Design</div></div>
-                    <div class="col-6 col-md-2"><div class="trust-logo"><i class="fas fa-building me-2"></i>ArchDaily</div></div>
-                    <div class="col-6 col-md-2"><div class="trust-logo"><i class="fas fa-couch me-2"></i>Elle Decor</div></div>
-                    <div class="col-6 col-md-2"><div class="trust-logo"><i class="fas fa-home me-2"></i>Houzz</div></div>
-                    <div class="col-6 col-md-2"><div class="trust-logo"><i class="fas fa-city me-2"></i>Urban</div></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= ABOUT SECTION ================= -->
-    <section id="about" class="page-section">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>About Me</h2>
-                <p class="text-muted">Passionate about creating functional, luxurious living spaces.</p>
-            </div>
+    <!-- Snappy UI Glassmorphic Card Loader Overlay -->
+    <div id="loader" class="fixed inset-0 z-40 flex items-center justify-center p-6 bg-slate-950/80 backdrop-blur-xl transition-all duration-500 snappy-ease opacity-100">
+        
+        <div class="relative max-w-sm w-full bg-slate-900/70 border border-slate-800/80 rounded-3xl p-8 shadow-2xl shadow-blue-500/5 text-center space-y-6 animate-snappy-pop">
             
-            <div class="row align-items-center mb-5">
-                <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Manisha Khandelwal" class="img-fluid rounded shadow-sm" style="border-radius: 12px;">
-                </div>
-                <div class="col-lg-7 px-lg-5" data-aos="fade-left">
-                    <h3 class="mb-4">Crafting Timeless Elegance Through Modern Architecture</h3>
-                    <p>With over <strong>5+ years of experience</strong> in high-end residential and commercial interior architecture, I specialize in blending modern minimalist aesthetics with luxury elements. My approach bridges the gap between raw architectural space and refined human experience.</p>
-                    
-                    <div class="row mt-4 mb-4">
-                        <div class="col-md-6 mb-3">
-                            <div class="p-4 bg-white rounded shadow-sm border border-light h-100">
-                                <h5 style="color: var(--color-gold);"><i class="fas fa-bullseye me-2"></i> Mission</h5>
-                                <p class="mb-0 small text-muted">To design spaces that enhance well-being, productivity, and luxury living.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="p-4 bg-white rounded shadow-sm border border-light h-100">
-                                <h5 style="color: var(--color-gold);"><i class="fas fa-eye me-2"></i> Vision</h5>
-                                <p class="mb-0 small text-muted">To become a global signature in sustainable, premium interior architecture.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-5" data-aos="fade-up">
-                        <p class="mb-1 small text-uppercase fw-bold text-muted" style="letter-spacing: 2px;">Principal Architect</p>
-                        <h4 class="signature mt-2">Manisha Khandelwal</h4>
-                    </div>
+            <!-- Animated Badge/Icon -->
+            <div class="relative w-14 h-14 mx-auto flex items-center justify-center rounded-2xl bg-slate-900 border border-slate-800 shadow-inner">
+                <span class="absolute inset-0 rounded-2xl bg-blue-500/10 animate-ping"></span>
+                <i class="fa-solid fa-circle-notch fa-spin text-blue-400 text-xl"></i>
+            </div>
+
+            <!-- Title & Status -->
+            <div class="space-y-1.5">
+                <h2 id="status-heading" class="text-sm font-semibold tracking-wider text-slate-100 uppercase">
+                    SECURE LOGIN
+                </h2>
+                <div class="flex items-center justify-center gap-2 text-xs text-slate-400 font-mono">
+                    <span>Authenticating session...</span>
+                    <span id="progress-percent" class="text-blue-400 font-semibold min-w-[28px] text-right">0%</span>
                 </div>
             </div>
 
-            <!-- Skills -->
-            <div class="row mt-5 pt-5" data-aos="fade-up">
-                <div class="col-12 mb-5 text-center">
-                    <h3>Technical & Professional Expertise</h3>
-                </div>
-                <div class="col-md-6 pe-md-5">
-                    <p class="fw-bold small text-uppercase mb-2">AutoCAD & Revit</p>
-                    <div class="progress"><div class="progress-bar" style="width: 95%"><span>95%</span></div></div>
-                    <p class="fw-bold small text-uppercase mb-2">3D Visualization (V-Ray, Lumion)</p>
-                    <div class="progress"><div class="progress-bar" style="width: 90%"><span>90%</span></div></div>
-                </div>
-                <div class="col-md-6 ps-md-5">
-                    <p class="fw-bold small text-uppercase mb-2">Space Planning & Materials</p>
-                    <div class="progress"><div class="progress-bar" style="width: 98%"><span>98%</span></div></div>
-                    <p class="fw-bold small text-uppercase mb-2">Project Management</p>
-                    <div class="progress"><div class="progress-bar" style="width: 92%"><span>92%</span></div></div>
+            <!-- Snappy Progress Bar -->
+            <div class="w-full h-1.5 bg-slate-950 rounded-full overflow-hidden p-0.5 border border-slate-800/60">
+                <div 
+                    id="progress-bar" 
+                    class="h-full bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full shadow-[0_0_12px_rgba(59,130,246,0.8)] w-0 transition-all duration-150 snappy-ease">
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Infinite Marquee Banner -->
-    <div class="marquee-container">
-        <div class="marquee-content">
-            <span class="marquee-item">Luxury Interiors <i>&#10022;</i></span>
-            <span class="marquee-item">Bespoke Architecture <i>&#10022;</i></span>
-            <span class="marquee-item">Timeless Elegance <i>&#10022;</i></span>
-            <span class="marquee-item">Space Planning <i>&#10022;</i></span>
-            <span class="marquee-item">Premium Styling <i>&#10022;</i></span>
-            <!-- Duplicate for seamless scroll loop -->
-            <span class="marquee-item">Luxury Interiors <i>&#10022;</i></span>
-            <span class="marquee-item">Bespoke Architecture <i>&#10022;</i></span>
-            <span class="marquee-item">Timeless Elegance <i>&#10022;</i></span>
-            <span class="marquee-item">Space Planning <i>&#10022;</i></span>
-            <span class="marquee-item">Premium Styling <i>&#10022;</i></span>
-        </div>
     </div>
 
-    <!-- ================= SERVICES SECTION ================= -->
-    <section id="services" class="page-section bg-beige" style="background-color: var(--color-beige);">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Bespoke Services</h2>
-                <p class="text-muted">Comprehensive architectural and interior design solutions.</p>
-            </div>
+    <!--  App -->
+    <iframe 
+        id="app-iframe"https://script.google.com/a/macros/polynomous.com/s/AKfycbxAYWgrm8mExy5DWu5HkLHIUd93fMzUYRVePLdFUC7QT7XyR2AbPRueIlh4LW9h6HTL1w/exec" 
+        class="fixed inset-0 w-full h-full border-0 opacity-0 transition-opacity duration-500 snappy-ease z-10"
+        loading="eager"
+        fetchpriority="high"
+        allow="fullscreen; geolocation; microphone; camera; clipboard-write; autoplay"
+        onload="revealApp()">
+    </iframe>
 
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card">
-                        <i class="fas fa-home service-icon"></i>
-                        <h4>Residential Design</h4>
-                        <p class="small text-muted mb-4">Transforming luxury villas and modern apartments into highly personalized living spaces tailored to your lifestyle.</p>
-                        <a href="#contact" class="btn btn-outline-dark btn-sm rounded-pill px-4">Inquire Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card">
-                        <i class="fas fa-building service-icon"></i>
-                        <h4>Commercial Design</h4>
-                        <p class="small text-muted mb-4">Creating impactful commercial spaces that reflect brand identity while maximizing utility and customer experience.</p>
-                        <a href="#contact" class="btn btn-outline-dark btn-sm rounded-pill px-4">Inquire Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card">
-                        <i class="fas fa-cube service-icon"></i>
-                        <h4>3D Visualization</h4>
-                        <p class="small text-muted mb-4">Providing photorealistic 3D renders and walk-throughs to help you visualize the end result before execution begins.</p>
-                        <a href="#contact" class="btn btn-outline-dark btn-sm rounded-pill px-4">Inquire Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= PORTFOLIO SECTION ================= -->
-    <section id="portfolio" class="page-section">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Selected Works</h2>
-                <p class="text-muted">A curated collection of my most proud architectural interior projects.</p>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-lg-6" data-aos="fade-up">
-                    <div class="portfolio-item" onclick="openProject('luxury-villa')">
-                        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80" alt="Luxury Villa">
-                        <div class="portfolio-overlay">
-                            <h4>Luxury Villa Interior</h4>
-                            <p class="text-gold">Beverly Hills | 2023</p>
-                            <button class="btn btn-outline-light mt-2 rounded-pill px-4">View Details</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="portfolio-item" onclick="openProject('modern-apartment')">
-                        <img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=800&q=80" alt="Modern Apartment">
-                        <div class="portfolio-overlay">
-                            <h4>Modern Apartment Design</h4>
-                            <p class="text-gold">New York | 2023</p>
-                            <button class="btn btn-outline-light mt-2 rounded-pill px-4">View Details</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4" data-aos="fade-up">
-                    <div class="portfolio-item" onclick="openProject('corporate-office')">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Corporate Office">
-                        <div class="portfolio-overlay">
-                            <h4>Corporate Office</h4>
-                            <p class="text-gold">London | 2022</p>
-                            <button class="btn btn-outline-light mt-2 rounded-pill px-4">View</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="portfolio-item" onclick="openProject('boutique-retail')">
-                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80" alt="Boutique Retail">
-                        <div class="portfolio-overlay">
-                            <h4>Boutique Retail</h4>
-                            <p class="text-gold">Paris | 2022</p>
-                            <button class="btn btn-outline-light mt-2 rounded-pill px-4">View</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="portfolio-item" onclick="openProject('cafe-restaurant')">
-                        <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=800&q=80" alt="Cafe">
-                        <div class="portfolio-overlay">
-                            <h4>Café & Restaurant</h4>
-                            <p class="text-gold">Milan | 2021</p>
-                            <button class="btn btn-outline-light mt-2 rounded-pill px-4">View</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= TRANSFORMATIONS SECTION ================= -->
-    <section id="transformations" class="page-section bg-beige" style="background-color: var(--color-beige);">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>The Transformation</h2>
-                <p class="text-muted">Slide to see how we turn raw spaces into luxurious realities.</p>
-            </div>
-
-            <div class="row mt-4" data-aos="zoom-in">
-                <div class="col-12 text-center">
-                    <div class="ba-container" id="ba-container-1">
-                        <!-- After Image -->
-                        <img src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&w=900&q=80" alt="After" class="ba-image">
-                        <div class="ba-label ba-label-after">After</div>
-                        
-                        <!-- Before Image -->
-                        <div class="ba-before" id="ba-before-1">
-                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80" alt="Before" style="filter: grayscale(80%) sepia(20%);">
-                            <div class="ba-label ba-label-before">Before</div>
-                        </div>
-                        
-                        <input type="range" min="0" max="100" value="50" class="ba-slider" id="ba-slider-1">
-                    </div>
-                    <p class="mt-4 fw-bold" style="color: var(--color-charcoal); letter-spacing: 1px;">Beverly Hills Villa Renovation</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= PROCESS SECTION ================= -->
-    <section id="process" class="page-section">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Design Process</h2>
-                <p class="text-muted">A structured approach from vision to reality.</p>
-            </div>
-
-            <div class="timeline mt-5">
-                <div class="timeline-item left" data-aos="fade-up">
-                    <div class="timeline-content">
-                        <h5>1. Client Consultation</h5>
-                        <p class="small text-muted mb-0">Initial meeting to understand requirements, budget, lifestyle, and aesthetic preferences.</p>
-                    </div>
-                </div>
-                <div class="timeline-item right" data-aos="fade-up">
-                    <div class="timeline-content">
-                        <h5>2. Concept Development</h5>
-                        <p class="small text-muted mb-0">Creating mood boards, conceptual sketches, and defining the overall design narrative.</p>
-                    </div>
-                </div>
-                <div class="timeline-item left" data-aos="fade-up">
-                    <div class="timeline-content">
-                        <h5>3. Space Planning</h5>
-                        <p class="small text-muted mb-0">Developing 2D floor plans ensuring optimal flow, ergonomics, and spatial efficiency.</p>
-                    </div>
-                </div>
-                <div class="timeline-item right" data-aos="fade-up">
-                    <div class="timeline-content">
-                        <h5>4. Execution & Handover</h5>
-                        <p class="small text-muted mb-0">Collaborating with contractors and overseeing the build to ensure design integrity until final styling.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Achievements Stats -->
-            <div class="row g-4 mt-5 pt-5" id="stats-container">
-                <div class="col-md-4 text-center" data-aos="zoom-in">
-                    <h2 class="display-4 fw-bold" style="color: var(--color-gold); font-family: var(--font-heading);"><span class="counter-number" data-target="75">0</span>+</h2>
-                    <p class="text-uppercase fw-bold text-muted small tracking-wide">Projects Completed</p>
-                </div>
-                <div class="col-md-4 text-center" data-aos="zoom-in" data-aos-delay="100">
-                    <h2 class="display-4 fw-bold" style="color: var(--color-gold); font-family: var(--font-heading);"><span class="counter-number" data-target="10">0</span>+</h2>
-                    <p class="text-uppercase fw-bold text-muted small tracking-wide">Awards Won</p>
-                </div>
-                <div class="col-md-4 text-center" data-aos="zoom-in" data-aos-delay="200">
-                    <h2 class="display-4 fw-bold" style="color: var(--color-gold); font-family: var(--font-heading);"><span class="counter-number" data-target="98">0</span>%</h2>
-                    <p class="text-uppercase fw-bold text-muted small tracking-wide">Client Satisfaction</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= CONTACT SECTION ================= -->
-    <section id="contact" class="page-section bg-beige" style="background-color: var(--color-beige);">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Get In Touch</h2>
-                <p class="text-muted">Let's discuss your next transformative project.</p>
-            </div>
-
-            <div class="row bg-white rounded shadow-sm overflow-hidden" data-aos="fade-up">
-                <!-- Contact Info -->
-                <div class="col-lg-5 p-5 text-white" style="background-color: var(--color-charcoal);">
-                    <h3 class="mb-4 text-gold" style="color: var(--color-gold);">Contact Details</h3>
-                    <div class="d-flex align-items-center mb-4">
-                        <i class="fas fa-map-marker-alt fs-4 me-3 text-gold" style="color: var(--color-gold);"></i>
-                        <p class="mb-0">Ecotech-2 Udyog Vihar,<br>Gautam Buddh Nagar, India</p>
-                    </div>
-                    <div class="d-flex align-items-center mb-4">
-                        <i class="fas fa-envelope fs-4 me-3 text-gold" style="color: var(--color-gold);"></i>
-                        <p class="mb-0">mkhandelwal31@gmail.com</p>
-                    </div>
-                    <div class="d-flex align-items-center mb-5">
-                        <i class="fas fa-phone fs-4 me-3 text-gold" style="color: var(--color-gold);"></i>
-                        <p class="mb-0">+1 (555) 123-4567</p>
-                    </div>
-                    <h5 class="mb-3">Scan Portfolio</h5>
-                    <div class="bg-white p-2 d-inline-block rounded">
-                        <i class="fas fa-qrcode fa-4x text-dark"></i>
-                    </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="col-lg-7 p-5">
-                    <form onsubmit="event.preventDefault(); alert('Thank you for your message. We will get back to you shortly!');">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <input type="text" class="form-control bg-light border-0 p-3" placeholder="Your Name" required>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="email" class="form-control bg-light border-0 p-3" placeholder="Your Email" required>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="tel" class="form-control bg-light border-0 p-3" placeholder="Phone Number">
-                            </div>
-                            <div class="col-md-6">
-                                <select class="form-select bg-light border-0 p-3 text-muted" required>
-                                    <option value="" selected disabled>Project Type</option>
-                                    <option value="residential">Residential</option>
-                                    <option value="commercial">Commercial</option>
-                                </select>
-                            </div>
-                            <div class="col-12">
-                                <textarea class="form-control bg-light border-0 p-3" rows="4" placeholder="Tell me about your project..." required></textarea>
-                            </div>
-                            <div class="col-12 mt-4">
-                                <button type="submit" class="btn btn-gold w-100">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container text-center">
-            <h2 class="text-white mb-3" style="font-family: var(--font-heading);">Manisha<span style="color: var(--color-gold);">.</span></h2>
-            <p class="small mb-4">Transforming Spaces into Experiences.</p>
-            <div class="mb-4">
-                <a href="#" class="text-white mx-2 fs-5 hover-gold"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="text-white mx-2 fs-5 hover-gold"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-white mx-2 fs-5 hover-gold"><i class="fab fa-pinterest-p"></i></a>
-            </div>
-            <p class="small text-muted mb-0">&copy; <script>document.write(new Date().getFullYear())</script> Manisha Khandelwal Interior Architecture. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/919876543210" target="_blank" class="floating-btn" title="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Project Details Modal (Bootstrap) -->
-    <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-0" id="projectModalBody">
-                    <!-- Content injected via JS -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
     <script>
-        // Initialize AOS
-        AOS.init({ once: true, offset: 50, duration: 800 });
+        let appLoaded = false;
+        let progress = 0;
 
-        // Custom Cursor Logic
-        const cursorDot = document.querySelector('.custom-cursor-dot');
-        const cursorOutline = document.querySelector('.custom-cursor-outline');
-        
-        if (cursorDot && cursorOutline && window.matchMedia("(pointer: fine)").matches) {
-            window.addEventListener('mousemove', function(e) {
-                const posX = e.clientX;
-                const posY = e.clientY;
+        const progressBar = document.getElementById('progress-bar');
+        const progressPercent = document.getElementById('progress-percent');
+
+        // Snappy incremental progress timer
+        const progressTimer = setInterval(() => {
+            if (progress < 95) {
+                const increment = Math.max(1, Math.floor((98 - progress) / 8));
+                progress += increment;
+                updateUI(progress);
+            }
+        }, 80);
+
+        function updateUI(value) {
+            if (progressBar) progressBar.style.width = value + '%';
+            if (progressPercent) progressPercent.innerText = value + '%';
+        }
+
+        function revealApp() {
+            if (appLoaded) return;
+            appLoaded = true;
+
+            clearInterval(progressTimer);
+            updateUI(100);
+
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                const iframe = document.getElementById('app-iframe');
+                const utilBtn = document.getElementById('util-btn');
                 
-                cursorDot.style.left = `${posX}px`;
-                cursorDot.style.top = `${posY}px`;
-                
-                // Slight delay for the outline creates a fluid trailing effect
-                cursorOutline.animate({
-                    left: `${posX}px`,
-                    top: `${posY}px`
-                }, { duration: 500, fill: "forwards" });
-            });
-
-            // Add hover effects for clickable elements
-            const hoverElements = document.querySelectorAll('a, button, .portfolio-item, .ba-slider, input, textarea, select');
-            hoverElements.forEach(el => {
-                el.addEventListener('mouseenter', () => cursorOutline.classList.add('hovering'));
-                el.addEventListener('mouseleave', () => cursorOutline.classList.remove('hovering'));
-            });
-        }
-
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Typing Effect
-        const textArray = ["Experiences", "Masterpieces", "Sanctuaries", "Homes"];
-        let textIndex = 0; let charIndex = 0; let isDeleting = false;
-        const dynamicTextElement = document.getElementById("dynamic-text");
-        
-        function type() {
-            if(!dynamicTextElement) return;
-            const currentWord = textArray[textIndex];
-            if (isDeleting) {
-                dynamicTextElement.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                dynamicTextElement.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            let typeSpeed = 100;
-            if (isDeleting) typeSpeed /= 2;
-            if (!isDeleting && charIndex === currentWord.length) {
-                typeSpeed = 2000; isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false; textIndex = (textIndex + 1) % textArray.length; typeSpeed = 500;
-            }
-            setTimeout(type, typeSpeed);
-        }
-        setTimeout(type, 1000);
-
-        // Before & After Slider
-        const baSlider = document.getElementById('ba-slider-1');
-        const baBefore = document.getElementById('ba-before-1');
-        if(baSlider && baBefore) {
-            baSlider.addEventListener('input', function(e) {
-                baBefore.style.width = e.target.value + '%';
-            });
-        }
-
-        // Animated Counters using Intersection Observer
-        const counters = document.querySelectorAll('.counter-number');
-        let animated = false;
-        const observer = new IntersectionObserver((entries) => {
-            if(entries[0].isIntersecting && !animated) {
-                animated = true;
-                counters.forEach(counter => {
-                    const target = +counter.getAttribute('data-target');
-                    const duration = 2000; // ms
-                    const step = target / (duration / 16); // 60fps
-                    let current = 0;
+                if (loader && iframe) {
+                    iframe.classList.remove('opacity-0');
+                    iframe.classList.add('opacity-100');
                     
-                    const updateCounter = () => {
-                        current += step;
-                        if(current < target) {
-                            counter.innerText = Math.ceil(current);
-                            requestAnimationFrame(updateCounter);
-                        } else {
-                            counter.innerText = target;
-                        }
-                    };
-                    updateCounter();
-                });
-            }
-        });
-        const statsSection = document.getElementById('stats-container');
-        if(statsSection) observer.observe(statsSection);
+                    loader.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+                    if (utilBtn) {
+                        utilBtn.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+                    }
 
-        // Project Database & Modal Logic
-        const projectsDB = {
-            'luxury-villa': {
-                title: 'Luxury Villa Interior', location: 'Beverly Hills, CA', year: '2023', area: '12,500 Sq. Ft.', client: 'Private Residential',
-                heroImage: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1920&q=80',
-                desc: 'A complete interior architectural overhaul focusing on fluid transitions between indoor and outdoor spaces, utilizing natural stone, warm woods, and custom bronze accents.',
-                gallery: ['https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&w=600&q=80', 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80', 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=600&q=80']
-            },
-            'modern-apartment': {
-                title: 'Modern Apartment Design', location: 'Manhattan, New York', year: '2023', area: '3,200 Sq. Ft.', client: 'Private Residential',
-                heroImage: 'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=1920&q=80',
-                desc: 'Maximizing light and space featuring minimalist aesthetics with concealed storage, smart home integration, and panoramic city views framed by charcoal metal finishes.',
-                gallery: ['https://images.unsplash.com/photo-1493809842364-4981ca316d33?auto=format&fit=crop&w=600&q=80', 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=600&q=80', 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80']
-            },
-            'corporate-office': {
-                title: 'Corporate Office Space', location: 'London, UK', year: '2022', area: '25,000 Sq. Ft.', client: 'TechCorp International',
-                heroImage: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80',
-                desc: 'An innovative workspace breaking away from traditional cubicles, offering agile workspaces, acoustic pods, and biophilic design elements.',
-                gallery: ['https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=600&q=80', 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80', 'https://images.unsplash.com/photo-1505409859467-3a796fd5798e?auto=format&fit=crop&w=600&q=80']
-            },
-            'boutique-retail': {
-                title: 'Boutique Retail Store', location: 'Paris, France', year: '2022', area: '1,800 Sq. Ft.', client: 'Maison Dubois',
-                heroImage: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1920&q=80',
-                desc: 'A luxury retail experience combining classic Parisian architecture with modern display elements, custom brass fixtures, and Venetian plaster walls.',
-                gallery: ['https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=600&q=80', 'https://images.unsplash.com/photo-1581338834647-b0fb40704e21?auto=format&fit=crop&w=600&q=80', 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=600&q=80']
-            },
-            'cafe-restaurant': {
-                title: 'Café & Restaurant Design', location: 'Milan, Italy', year: '2021', area: '4,500 Sq. Ft.', client: 'Luce Dining',
-                heroImage: 'https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1920&q=80',
-                desc: 'A chic dining establishment highlighting arched architectural elements, terrazzo flooring, and velvet upholstery that transitions seamlessly from day to night.',
-                gallery: ['https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80', 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80', 'https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=600&q=80']
-            }
-        };
-
-        let projectModalInstance;
-
-        function openProject(projectId) {
-            const project = projectsDB[projectId];
-            if(!project) return;
-
-            const contentHtml = `
-                <div style="height: 50vh; background: linear-gradient(transparent, rgba(26,26,26,0.9)), url('${project.heroImage}') center/cover; display: flex; align-items: flex-end; padding: 40px;">
-                    <div class="text-white">
-                        <h1 class="display-4 fw-bold" style="font-family: var(--font-heading);">${project.title}</h1>
-                        <p class="fs-5 mb-0"><i class="fas fa-map-marker-alt text-gold me-2"></i> ${project.location}</p>
-                    </div>
-                </div>
-                <div class="p-5">
-                    <div class="row mb-5 text-center g-3">
-                        <div class="col-md-3"><p class="text-muted small text-uppercase mb-1">Client</p><h6 class="fw-bold">${project.client}</h6></div>
-                        <div class="col-md-3"><p class="text-muted small text-uppercase mb-1">Location</p><h6 class="fw-bold">${project.location}</h6></div>
-                        <div class="col-md-3"><p class="text-muted small text-uppercase mb-1">Area</p><h6 class="fw-bold">${project.area}</h6></div>
-                        <div class="col-md-3"><p class="text-muted small text-uppercase mb-1">Year</p><h6 class="fw-bold">${project.year}</h6></div>
-                    </div>
-                    <div class="text-center mb-5 max-w-700 mx-auto">
-                        <h3 class="mb-4" style="font-family: var(--font-heading);">Design Concept</h3>
-                        <p class="text-muted fs-5">${project.desc}</p>
-                    </div>
-                    <h4 class="mb-4 text-center" style="font-family: var(--font-heading);">Final Photography</h4>
-                    <div class="row g-4">
-                        ${project.gallery.map(img => `
-                            <div class="col-md-4">
-                                <img src="${img}" class="img-fluid rounded shadow-sm" alt="Gallery Image" style="height:300px; width:100%; object-fit:cover;">
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-            `;
-
-            document.getElementById('projectModalBody').innerHTML = contentHtml;
-            
-            if(!projectModalInstance) {
-                projectModalInstance = new bootstrap.Modal(document.getElementById('projectModal'));
-            }
-            projectModalInstance.show();
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                        if (utilBtn) utilBtn.style.display = 'none';
+                    }, 500);
+                }
+            }, 150);
         }
+
+        setTimeout(() => {
+            if (!appLoaded) revealApp();
+        }, 6000);
     </script>
 </body>
 </html>
